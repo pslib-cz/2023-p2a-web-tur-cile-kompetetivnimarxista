@@ -78,9 +78,15 @@ figure, h2 {
     filter: blur(5px);
 }
 
-.categories__item-description:has(.categories__item:hover) {
+.categories:has(figure:hover) figure:hover .categories__item-description {
     position: absolute;
-    bottom: 20;
-    left: 20;
-    right: 20;
+    bottom: 50%;
+    left: 50%;
+    text-align: center;
+    transition: all 0.5s;
+    transform: translate(-50%, 50%);
+}
+ 
+.categories:has(figure:hover) figure:hover .categories__item-image {    
+    transition: all 10s;
 }
