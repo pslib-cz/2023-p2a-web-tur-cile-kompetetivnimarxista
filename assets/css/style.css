@@ -25,12 +25,18 @@ html {
     color: inherit;
     border-radius: 8px;
     /* max-height: 80vh; */
+
 }
 .categories__item:hover {
-
     transform: scale(1.05);
-
+    transition: transform 0.5s;
 }
+
+.categories__item-image:has(.categories__item:hover) {
+    transform: scale(1.1);
+    transition: transform 0.5s;
+}
+
 .categories__item-image {
     filter: brightness(0.9) saturate(1) contrast(1);
 }
@@ -68,15 +74,13 @@ figure, h2 {
     background-size: cover;
 }
 
-.categories__item:not(:hover) img{
+.categories:has(figure:hover) figure:not(:hover) img{
     filter: blur(5px);
-
-    transform: scale(1.2);
 }
 
 .categories__item-description:has(.categories__item:hover) {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: 20;
+    left: 20;
+    right: 20;
 }
